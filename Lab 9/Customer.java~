@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Customer{
+  //set variables/
+  String name;
+  boolean child;
+  boolean student;
+  boolean booked;
+  
+  //constructor taking in /
+  public Customer (String nameIn, int age, boolean studentIn){
+    name = nameIn;
+    student = studentIn;
+    child = age >= 5 && age <= 16;
+  }
+  
+  public String getName(){
+    return name;
+  }
+  
+  public boolean isChild(){
+    return child;
+  }
+  public boolean isStudent(){
+    return student; 
+  }
+  public boolean isBooked(){
+    return booked;
+  }
+  public void setBooked(){
+    booked = true;
+    
+  }
+}

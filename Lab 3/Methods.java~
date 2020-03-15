@@ -1,0 +1,16 @@
+
+public class Methods{
+  public static void main(String [] args){
+    fMethod(RUN);
+  }
+  public static void difference(){
+    int diffvalue = value - 2.6
+  }    
+  public static void double bMethod(){
+    
+  
+  }
+  public static String fMethod(String s){
+    return s + "*" + s
+  }
+}

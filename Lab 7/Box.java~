@@ -1,0 +1,32 @@
+public class Box(){
+  int height;
+  int width;
+  int length;
+  
+  public void setHeight(int h){
+    height = h
+  }
+  
+  public void setWidth(int w){
+    width = w
+  }
+  
+  public void setHeight(int l){
+    length = l
+  }
+  
+  public int getVolume(){
+    int volume = height * width * length
+      return volume 
+  }
+  
+  public int getSurfaceArea(){
+    int surfaceArea = 2*((height * length) + (width * height) + (length * width))
+      return surfaceArea
+  }
+  
+  public String toString(){
+    return "
+    
+  }
+  

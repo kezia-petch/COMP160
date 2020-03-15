@@ -1,0 +1,8 @@
+public class RandomApp{
+ public static void main(String[]args){ 
+  int lo = readInt("Enter lowest value");
+  int hi = readInt("Enter highest value");
+  RandomRange r = new RandomRange();
+  System.out.println("Random integer between " + lo + " and " + hi + " : " + r.randomRange(lo, hi)); 
+ }
+}

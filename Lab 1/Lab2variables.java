@@ -1,0 +1,17 @@
+public class Lab2variables{
+  
+  public static void main(String []  args) {
+    
+    String first = "Easter Break";
+    String second = "University of Otago";
+    String day = "19";
+    String month = "04";
+    int year = 2019;
+    
+    System.out.print(day + "/" + month + "/" + year);
+    System.out.println(first + "\n" + second);
+    System.out.println(year + 10);
+    System.out.print(month + 1);
+  }
+  
+}
