@@ -1,0 +1,6 @@
+/** DinerApp class
+ * Lab 14 COMP160
+ */
+
+public class DinerApp{
+  public static void main(String[]args){

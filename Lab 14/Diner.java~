@@ -1,0 +1,22 @@
+/** Diner class
+ * Lab 14 COMP160
+ */
+import java.awt.*;
+import javax.swing.*;
+public class Diner{
+  int x;
+  int y;
+  String name;
+  int seatNum;
+  Color colour;
+  final int DIAMETER = 50;
+  
+  public Diner (int x, int y, String name, int seatNum){
+    this.x = x;
+    this.y = y;
+    this.name = name;
+    this.seatNum = seatNum;
+  }
+  
+  public void draw(Graphics g){}
+}

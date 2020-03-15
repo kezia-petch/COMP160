@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class EnterStrApp{
+  public static void main(String[]args){
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter a sentence:");
+    String sentence = scan.nextLine();
+    int i = 0;
+    int vowelCount = 0;
+    int consCount = 0;
+    while (i < sentence.length()){
+      if (sentence.charAt(i) == 'a'){
+        vowelCount++;}
+      if (sentence.charAt(i) == 'e'){
+        vowelCount++;}
+      if (sentence.charAt(i) == 'i'){
+        vowelCount++;}
+      if (sentence.charAt(i) == 'o'){
+        vowelCount++;}
+      if (sentence.charAt(i) == 'u'){
+        vowelCount++;}
+      if (sentence.charAt(i) == 'A'){
+        vowelCount++;}
+      if (sentence.charAt(i) == 'E'){
+        vowelCount++;}
+      if (sentence.charAt(i) == 'I'){
+        vowelCount++;}
+      if (sentence.charAt(i) == 'O'){
+        vowelCount++;}
+      if (sentence.charAt(i) == 'U'){
+        vowelCount++;}
+      else {consCount++;}
+      i++;}
+    System.out.println("The number of vowels: " + vowelCount);
+    System.out.println("The number of constinents: " + consCount);
+}
+}

@@ -1,0 +1,8 @@
+/**Fruit class
+ * Lab 16 COMP160
+ */
+
+import java.util.Scanner;
+public class Fruit{
+  public static void main(String[]args){
+  

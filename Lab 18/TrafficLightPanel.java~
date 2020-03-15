@@ -1,0 +1,26 @@
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class TrafficLightPanel extends JPanel{
+  private JButton redButton;
+  private JButton greenButton;
+  private JButton amberButton;
+  private JLabel lastPressedLabel;
+  private JPanel buttonPanel;
+  
+  public TrafficLightPanel(){
+    private class ButtonListener implements ActionListener{
+      public void actionPerformed (ActionEvent event){
+      }
+      
+      private class LightPanel extends JPanel{
+        public LightPanel(){
+        }
+        public void paintComponent(Graphics g){
+        }
+      }
+    }
+  }
+}
+

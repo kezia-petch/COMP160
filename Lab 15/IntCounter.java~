@@ -1,0 +1,24 @@
+/** IntCounter class - focusing on Arrays
+ * Lab 15 COMP160
+ */
+
+public class IntCounter{
+  int [] numArray;
+  /** takes an array as the parameter and sets the variable to the parameter value, and displays every element of the array on the same
+    * line with the array length at the end of the line */
+  public IntCounter (int [] numArray){
+    this.numArray = numArray;
+    for (int number : numArray){
+      System.out.print(number + " ");
+    }
+    System.out.print("Array is the length " + numArray.length);
+  }
+  /** Prints out a line stating where the target (inputted parameter) is present in the created array if the target is present */
+  public void showTarget(int target){
+    for (int i = 0; i <= numArray.length; i++){
+      if (numArray[i] == target){
+        System.out.println("\t" + "There is a " + target + " in position " + i);
+      }
+    }
+    }
+  }

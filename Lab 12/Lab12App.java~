@@ -1,0 +1,8 @@
+import java.util.Scanner;
+public class Lab12App{
+  public static void main(String[]args){
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter and integer greater than 1:");
+    int num = scan.nextInt();
+    while 
+    

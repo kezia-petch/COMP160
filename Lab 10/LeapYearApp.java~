@@ -1,0 +1,24 @@
+/** Kezia Lab 10 COMP160
+  * Determing if any year is a leap year due to specific calculations, using if else statements
+  */
+
+public class LeapYearApp{
+  
+  public static void main(String[]args){
+    
+    
+    
+    public static void leapYear(int year){
+      if (year<1582){
+        System.out.println(year + ": predates the Gregorian calender");}
+      else if (year % 4 == 0 && year % 100 != 0){
+        System.out.println(year + ": is a leap year");}
+        else if (year % 4 == 0 && year % 100 == 0 && year % 400 !=0){
+          System.out.println(year + ": is not a leap year");}
+        else if (year % 4 == 0 && year % 100 == 0 && year % 400 ==0){
+          System.out.println(year + ": is a leap year");}
+    
+    
+    
+  }
+}

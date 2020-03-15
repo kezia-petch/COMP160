@@ -1,0 +1,29 @@
+/** TablePanel extends JPanel - part of Diner program class
+ * Lab 13 COMP160
+ */
+import java.awt.*;
+import javax.swing.*;
+public class TablePanel extends JPanel{
+    Diner diner1;
+    Diner diner2;
+    Diner diner3;
+    Diner diner4;
+    Diner diner5;
+    Diner diner6;
+    
+    public TablePanel(){
+    diner1 = new Diner (
+    diner2 = new Diner (
+    diner3 = new Diner (
+    diner4 = new Diner (
+    diner5 = new Diner (
+    diner6 = new Diner (
+      
+      public void paintComponent(Graphics g){
+        diner1.draw(g);
+        diner2.draw(g);
+        diner3.draw(g);
+        diner4.draw(g);
+        diner5.draw(g);
+        diner6.draw(g);
+        diner7.draw(g);                                                         
