@@ -1,0 +1,28 @@
+import java.awt.*;
+import javax.swing.*;
+import java.util.Random;
+public class Shape{
+  int x;
+  int y;
+  int width;
+  int height;
+  Color colour;
+  
+  public Shape(){
+    width = randomRange(10, 30);
+    height = width;
+    x = (randomRange(0, 255) - width);
+    y = (randomRange(0, 255) - height);
+    Color colour2 = new Color(randomRange(0, 255), randomRange(0, 255), randomRange(0, 255));
+  }
+  
+  public int randomRange(int lo, int hi){
+    Random generator = new Random();
+    return generator.nextInt(hi-lo+1) + lo;
+  } 
+  
+  public void display(Graphics g){
+    g.setColor (colour);
+    g.fillOval (x, y, width, height);
+  }
+}

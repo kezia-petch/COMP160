@@ -1,0 +1,55 @@
+/**
+ * RandomRange.java
+ * Lab 21, Part 2, COMP160  2019
+ * Contains a single method which returns random integer between high and low parameters.
+ */
+import java.util.Random;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+public class ShapePanel extends JPanel{
+  private JPanel controlPanel;
+  private JButton addShape;
+  private JTextField showNum;
+  private JLabel countLabel;
+  private DrawingPanel drawPanel;
+  
+  public ShapePanel(){
+    controlPanel =  new JPanel();
+    addShape = new JButton("Add Shape");
+    countLabel = new JLabel("Count");
+    showNum = new JTextField("  ");
+    
+    controlPanel.setPreferredSize (new Dimension (100, 400));
+    controlPanel.setBackground (Color.white);
+    
+    controlPanel.add (addShape);
+    controlPanel.add (countLabel);
+    controlPanel.add (showNum);
+    add (controlPanel);
+    
+    Shape shape = new Shape();
+    shape.display();
+    
+    
+  }
+  
+  private class DrawingPanel extends JPanel{
+    public DrawingPanel(){
+      setPreferredSize (new Dimension (400, 400));
+      setBackground (Color.pink);
+      
+    }
+    public void paintComponent(Graphics g){
+      super.paintComponent(g);
+      
+    }
+    
+  }
+  
+  private class ButtonListener implements ActionListener{
+    
+    public void actionPerformed (ActionEvent event){
+    }
+  }
+}

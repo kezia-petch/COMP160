@@ -1,0 +1,61 @@
+/**
+ * Shape.java
+ * Lab 23, COMP160  2019
+ * Sets variables as a random number based on a specific range set by randomRange
+ */
+package shapes;
+import java.awt.*;
+import javax.swing.*;
+import java.util.Random;
+
+public abstract class Shape{
+  int x;
+  int y;
+  int width;
+  int height;
+  Color colour;
+  
+  int moveX = 1;
+  int moveY = 1;
+  
+  /**sets data fields as random numbers between the range shown
+    * uses randomRange to generate these random numbers*/
+  public Shape(){
+    width = randomRange(10, 30);
+    height = width;
+    x = (randomRange(0, 400 - width));
+    y = (randomRange(0, 400 - height));
+    colour = new Color(randomRange(0, 255), randomRange(0, 255), randomRange(0, 255));
+  }
+  public void move(){
+    y += moveY;
+    x += moveX;
+    if (x == 0||x == (400 - width)){
+      moveX = (moveX * -1);
+      x += moveX;
+      y += moveY;
+    }
+    else if (y == 0||y == (400 - height)){
+      moveY = (moveY * -1);
+      y += moveY;
+      y += moveY;
+    }
+  }
+  
+  /** Returns random integer between high and low parameters.
+    @param low lowest value of range required
+    @param high highest value of range required
+    @return a random integer between low and high values 
+    */
+  public int randomRange(int low, int high){
+    Random generator = new Random();
+    return generator.nextInt(high-low+1) + low;
+  }
+  
+  public abstract void display(Graphics g);
+  
+  public void showIndex(Graphics g, int num){
+    g.setFont( new Font("Helvetica", Font.BOLD, 10));
+    g.drawString(Integer.toString(num), x, y);
+}
+}

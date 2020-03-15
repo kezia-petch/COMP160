@@ -1,0 +1,116 @@
+/**
+ * ShapePanel.java
+ * Lab 23, COMP160  2019
+ * draws the randomly generated shapes (up to 20) when a button is pressed
+ */
+package shapes;
+import java.util.Random;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+public class ShapePanel extends JPanel{
+  private JPanel controlPanel;
+  private JButton addShape;
+  private JTextField showNum;
+  private JLabel countLabel;
+  private DrawingPanel drawPanel = new DrawingPanel();
+  private Shape shape = new Circle();
+  private int count = 0;
+  private Shape [] shapes = new Shape [20];
+  
+  private JButton [] buttons = {new JButton("Circle"), new JButton("Square"), new JButton("Oval"), new JButton("Smiley"), 
+    new JButton("Swirl"), new JButton("Start"), new JButton("Stop")};
+  
+  private JButton stop;
+  private JButton start;
+  Timer timer;
+  private final int DELAY = 10;
+  
+  /**creating the layout of the GUI*/
+  public ShapePanel(){
+    controlPanel =  new JPanel();
+    countLabel = new JLabel("Count");
+    showNum = new JTextField(2);
+    
+    controlPanel.setPreferredSize (new Dimension (100, 400));
+    controlPanel.setBackground (Color.white);
+    
+    add (controlPanel);
+    add (drawPanel);
+    controlPanel.add (countLabel);
+    controlPanel.add (showNum);
+    
+    ButtonListener listener = new ButtonListener();
+    
+    timer = new Timer (DELAY, listener);
+    
+    for (JButton button : buttons){
+      button.addActionListener(listener);
+      controlPanel.add (button);
+    }
+  }
+  
+  /**creates the dimensions of the drawing panel*/
+  private class DrawingPanel extends JPanel{
+    public DrawingPanel(){
+      setPreferredSize (new Dimension (400, 400));
+      setBackground (Color.pink);
+    }
+    
+    /**draws the shape and puts it into an array and makes sure there are only up to 20 produced*/
+    public void paintComponent(Graphics g){
+      super.paintComponent(g);
+      for (int i = 0; i < count; i++){
+        shapes[i].display(g);
+      }
+    }
+  }
+  
+  private class ButtonListener implements ActionListener{
+    Shape shape1 = new Circle();
+    
+    /**draws a shape based on what button the user has pressed
+      * makes sure count is displayed and that there are only up to 20 shapes produced
+      * a new array is also created*/
+    public void actionPerformed (ActionEvent event){
+      if (event.getSource() == timer){
+        for (int i = 0; i < count; i++){
+          shapes[i].move();
+        }
+      }
+      else{
+        JButton button = (JButton) event.getSource();
+        if (button.getText().equals("Circle")&& count < shapes.length){
+          shapes [count] = new Circle ();
+          count++; 
+        }
+        else if (button.getText().equals("Square")&& count < shapes.length){
+          shapes [count] = new Square ();
+          count++; 
+        }
+        else if (button.getText().equals("Oval")&& count < shapes.length){
+          shapes [count] = new Oval ();
+          count++; 
+        }
+        else if (button.getText().equals("Smiley")&& count < shapes.length){
+          shapes [count] = new Smiley ();
+          count++; 
+        }
+        else if (button.getText().equals("Swirl")&& count < shapes.length){
+          shapes [count] = new Swirl ();
+          count++; 
+        }
+        else if (button.getText().equals("Start")){
+          timer.start();
+        }
+        else if (button.getText().equals("Stop")){
+          timer.stop();
+        }
+        String count1 = Integer.toString(count);
+        showNum.setText(count1);
+      }
+      repaint();
+  }
+}
+}
+

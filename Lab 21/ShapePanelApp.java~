@@ -1,0 +1,11 @@
+import javax.swing.*;
+public class ShapePanelApp{
+  
+  public static void main(String[]args){
+    JFrame frame = new JFrame ("Shape Panel");
+    frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+    frame.getContentPane() .add(new ShapePanel());
+    frame.pack();
+    frame.setVisible(true);
+  }
+}
